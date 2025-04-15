@@ -15,6 +15,13 @@ public class Lemon extends Actor
         {
             resetLemon();
         }
+        
+        if (isTouching(Hero.class))
+        {
+            Bomb bomb = new Bomb();
+            getWorld().addObject(bomb, 300, 200);
+            getWorld().removeObject(this);
+        }
     }
     
     public void resetLemon()
